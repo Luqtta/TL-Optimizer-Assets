@@ -57,16 +57,30 @@ https://cdn.jsdelivr.net/gh/Luqtta/Ls-Optimizer-Assets@main/icons/valorant.png
 
 ## ♻️ Cache do jsDelivr e como forçar atualização
 
-- O jsDelivr **cacheia agressivamente** a versão de `@main` (por volta de **~7 dias**
-  na borda do CDN). **Arquivo novo** aparece rápido; **arquivo trocado** (mesmo nome)
-  pode continuar servindo a versão antiga até o cache expirar.
-- Para forçar a atualização de um arquivo que você **substituiu**, faça o *purge*
-  abrindo no navegador (ou via `curl`):
-  ```
-  https://purge.jsdelivr.net/gh/Luqtta/Ls-Optimizer-Assets@main/icons/valorant.png
-  ```
-- Alternativa sem purge: **versionar pela URL** (ex.: trocar `@main` por uma tag ou
-  commit fixo como `@v1` / `@<sha>`), assim cada versão tem cache eterno e imutável.
+Headers reais servidos pelo jsDelivr para `@main`
+(`Cache-Control: public, max-age=604800, s-maxage=43200`):
+
+- **CDN (borda do jsDelivr):** `s-maxage=43200` = **12 horas**. Um arquivo **trocado**
+  (mesmo nome) pode continuar sendo servido pela borda por até **12h**.
+- **Navegador do usuário:** `max-age=604800` = **7 dias**. Quem já abriu o ícone pode
+  manter a versão antiga em cache local por até **7 dias**.
+- **Arquivo novo** (id que nunca existiu) aparece quase na hora — não há versão antiga
+  pra cachear.
+
+Para forçar a atualização de um arquivo que você **substituiu**, faça o *purge* da borda
+abrindo no navegador (ou via `curl`):
+
+```
+https://purge.jsdelivr.net/gh/Luqtta/Ls-Optimizer-Assets@main/icons/valorant.png
+```
+
+O purge limpa o cache do CDN **na hora**, mas **não** limpa o cache já baixado no
+navegador de cada usuário (esse só sai com Ctrl+F5 ou ao expirar os 7 dias).
+
+Alternativa sem purge (recomendada se você troca ícones com frequência):
+**versionar pela URL** — trocar `@main` por uma **tag** ou **commit fixo**, ex.:
+`@v1` ou `@<sha-do-commit>`. URLs com versão fixa têm cache **imutável e eterno**,
+então cada atualização vira uma URL nova e nunca dá dor de cache.
 
 ## 🆔 IDs já existentes
 
