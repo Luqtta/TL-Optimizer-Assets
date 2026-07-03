@@ -1,6 +1,6 @@
-# Ls-Optimizer-Assets
+# TL-Optimizer-Assets
 
-Ícones (PNG) dos jogos usados pelo **Game Mode** do **LS Optimizer**, hospedados
+Ícones (PNG) dos jogos usados pelo **Game Mode** do **TL Optimizer**, hospedados
 de graça em um repositório público do GitHub e servidos pelo CDN do **jsDelivr**.
 
 ## 📐 Convenção de nomes (IMPORTANTE)
@@ -21,13 +21,13 @@ de reserva. Todos os arquivos ficam na pasta [`icons/`](icons/).
 ## 🔗 Padrão da URL (jsDelivr)
 
 ```
-https://cdn.jsdelivr.net/gh/Luqtta/Ls-Optimizer-Assets@main/icons/{id}.png
+https://cdn.jsdelivr.net/gh/Luqtta/TL-Optimizer-Assets@main/icons/{id}.png
 ```
 
 Exemplo (Valorant):
 
 ```
-https://cdn.jsdelivr.net/gh/Luqtta/Ls-Optimizer-Assets@main/icons/valorant.png
+https://cdn.jsdelivr.net/gh/Luqtta/TL-Optimizer-Assets@main/icons/valorant.png
 ```
 
 > `@main` aponta sempre para o último commit da branch `main`.
@@ -53,7 +53,7 @@ https://cdn.jsdelivr.net/gh/Luqtta/Ls-Optimizer-Assets@main/icons/valorant.png
    git push
    ```
 5. Em ~1 min o ícone já está disponível em:
-   `https://cdn.jsdelivr.net/gh/Luqtta/Ls-Optimizer-Assets@main/icons/apex.png`
+   `https://cdn.jsdelivr.net/gh/Luqtta/TL-Optimizer-Assets@main/icons/apex.png`
 
 ## ♻️ Cache do jsDelivr e como forçar atualização
 
@@ -71,7 +71,7 @@ Para forçar a atualização de um arquivo que você **substituiu**, faça o *pu
 abrindo no navegador (ou via `curl`):
 
 ```
-https://purge.jsdelivr.net/gh/Luqtta/Ls-Optimizer-Assets@main/icons/valorant.png
+https://purge.jsdelivr.net/gh/Luqtta/TL-Optimizer-Assets@main/icons/valorant.png
 ```
 
 O purge limpa o cache do CDN **na hora**, mas **não** limpa o cache já baixado no
